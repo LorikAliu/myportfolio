@@ -47,6 +47,7 @@ nav ul li :hover {
 .landing {
   position: relative;
   height: 100vh;
+  width: 100%;
   /* max-width: 2560px; */
   /* margin: 0 auto; */
   background-color: #FEFDFE;
