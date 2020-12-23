@@ -48,11 +48,14 @@ nav ul li :hover {
   position: relative;
   height: 100vh;
   /* max-width: 2560px; */
-  margin: 0 auto;
+  /* margin: 0 auto; */
   background-color: #FEFDFE;
   border-top: 6px solid #32A49A;
   border-bottom: 6px solid #32A49A;
   overflow: hidden;
+
+  margin: 0;
+  padding: 0;
 }
 .row {
   display: flex;
@@ -61,64 +64,57 @@ nav ul li :hover {
   position: relative;
   height: 100%;
   width: 100%;
-  min-width: 1000px;
+  /* min-width: 1000px; */
   background-image: url("./images/fsd.png");
   background-position: center;
   background-repeat: no-repeat; 
   background-size: cover; 
 }
-.items {
-  height: 50%;  
-  width: 100%;
-  padding: 10px;
-}
-.top {
-  position: relative;
-  height: 50%;
-  width: 100%;
-}
-.bottom {
-  position: relative;
-  height: 50%;
-  width: 100%;
-}
+
 .hello {
-  height: 100%;
-  width: 100%;
-}
-.hello div {
-  position: absolute;
-  bottom: 0;
-  width: 50%;
+  height: 50%;
+  min-height: 400px;
+  flex: 1 1 50%;
   font-family: 'Squada One', cursive;
   color: white;
   font-size: 44px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+} 
+
+.hello-name {
+  max-width: 280px;
 }
+
 .img-logo {
-  position: absolute;
-  left: 50%;
-  width: 50%;
+  height: 50%;
+  max-height: 485px;
+  flex: 1 1 50%;
+  text-align: center;
+
+  display: flex;
 }
 .img-logo img {
   height: 100%;
-  max-height: 500px;
   width: 100%;
-  max-width: 500px;
-  text-align: center;
 }
- .developer {
-  height: 100%;
-  width: 100%; 
-} 
-.developer div {
-  position: absolute;
-  top: 0;
-  width: 50%;
+
+.developer {
+  height: 50%;
+  /* min-height: 400px;
+  flex: 0 1 400px; */
+  flex: 1 1 50%;
+  text-align: center;
   font-family: 'Squada One', cursive;
   color: rgba(0, 0, 0, 0.8);
   font-size: 44px;
-  text-align: center;
+}
+
+.empty {
+  height: 50%;
+  flex: 0 1 50%;
 }
 
 .about {
@@ -157,10 +153,7 @@ nav ul li :hover {
   align-items: center;
 }
 .about-row-top .desc div {
-  /* height: 100%; */
-  /* flex: 1 0 200px; */
   width: 100%;
-  /* margin: auto auto; */
 }
 
 .about-row-bottom {
@@ -218,7 +211,6 @@ nav ul li :hover {
 }
 .about-header img {
   height: 80%;
-  /* width: 35%; */
   width: 60px;
   margin-top: auto;
   margin-bottom: auto;
@@ -232,8 +224,6 @@ nav ul li :hover {
 }
 
 .contact {
-  /* padding: 40px 250px; */
-  /* height: 100vh; */
   width: 100%;
   min-height: 450px;
   background-color: #F1F7FC;
@@ -256,9 +246,7 @@ nav ul li :hover {
   justify-content: center;
   align-items: center;
   min-width: 600px;
-  /* height: 20%; */
   height: auto;
-  /* min-height: 250px; */
   padding: 40px 0;
   width: 100%;
 }
@@ -405,5 +393,37 @@ td {
 @media (max-width: 1000px) {
   .row {
     background-image: url('./images/fsd2.png');
+  }
+
+  .landing {
+    height: 960px;
+  }
+
+  .hello {
+    order: 2;
+    height: fit-content;
+    min-height: 0;
+    flex: 1 0 100%;
+    color: rgba(0, 0, 0, 0.8);
+    min-width: 380px;
+  }
+  .img-logo {
+    order: 1;
+    max-width: 480px;
+    min-width: 380px;
+    flex: 1 1 100%;
+    align-content: flex-start;
+  }
+
+  .developer {
+    order: 3;
+    height: fit-content;
+    flex: 1 0 100%;
+    min-width: 380px;
+  }
+  .empty {
+    order: 4;
+    height: 25%;
+    flex: 1 0 100%;
   }
 }
