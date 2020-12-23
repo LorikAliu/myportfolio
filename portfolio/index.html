@@ -101,5 +101,21 @@
 
 </body>
 <script>
+    const navbar = document.querySelector('.nav');
+    function getOffset(el) {
+    const rect = el.getBoundingClientRect();
+        return {
+            left: rect.left + window.scrollX,
+            top: rect.top + window.scrollY
+        };
+    }
+    window.onscroll = () => {
+        if (window.scrollY > getOffset(document.getElementById('about')).top) {
+            navbar.classList.add('nav-active');
+        } else {
+            navbar.classList.remove('nav-active');
+        }
+    };
+
 </script>
 </html>
