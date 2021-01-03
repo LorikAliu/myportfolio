@@ -9,17 +9,19 @@
 </head>
 <body>
 
-    <nav class="nav" id="nav">
-        <ul>
-            <li><a class="nav-btn" href="/myportfolio">home</a></li>
-        </ul>
-        <ul>
-            <li><a class="nav-btn" href="/myportfolio/about">about</a></li>
-        </ul>
-        <ul>
-            <li><a class="nav-btn" href="#contact">contact</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav class="nav" id="nav">
+            <div class="empty-space"></div>
+            <button class="navbar-toggler" id="burger">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar" id="navbar">
+                <li><a class="nav-btn" href="#home">home</a></li>
+                <li><a class="nav-btn" href="/about">about</a></li>
+                <li><a class="nav-btn" href="#contact">contact</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>   
         <div class="about" id="about">
             <div class="about-row-top">
@@ -65,5 +67,29 @@
 
 </body>
 <script>
+    const burger = document.getElementById('burger');
+    const navb = document.getElementById('navbar')
+    const navbar = document.querySelector('.nav');
+
+    burger.addEventListener('click', () => {
+        navb.classList.toggle('show')
+        navbar.classList.toggle('nav-show')
+    })
+
+    function getOffset(el) {
+    const rect = el.getBoundingClientRect();
+        return {
+            left: rect.left + window.scrollX,
+            top: rect.top + window.scrollY
+        };
+    }
+    window.onscroll = () => {
+        // if (window.scrollY > getOffset(document.getElementById('about')).top) {
+        if (window.scrollY > getOffset(document.getElementById('about')).top - 44) {
+            navbar.classList.add('nav-active');
+        } else {
+            navbar.classList.remove('nav-active');
+        }
+    };
 </script>
 </html>

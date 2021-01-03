@@ -35,6 +35,8 @@ header {
   width: 100%;
   position: fixed;
   z-index: 2;
+
+  transition: background-color 250ms ease-in;
 }
 .nav-active {
   /* top: 0; */
@@ -42,6 +44,7 @@ header {
   /* padding: 10px 30px 10px 0; */
   background-color: #32A49A;
   /* transition: all 300ms ease; */
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
 }
 /* .nav ul {
   display: inline-block;
@@ -513,6 +516,22 @@ td {
     flex-direction: column;
 
     /* height: 150px; */
+  }
+  .nav-show {
+    /* border-bottom: solid 1px #a9d9d5; */
+    /* border-bottom: solid 1px #3f5f5c; */
+    background-color: #262A2B;
+    /* background-color: #1d2b29; */
+
+    /* color: whitesmoke; */
+  }
+
+  .nav-show a {
+    color: whitesmoke;
+  }
+
+  .nav-show a:hover {
+    color: rgba(245, 245, 245, 0.479);
   }
 
   .row {
