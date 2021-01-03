@@ -24,7 +24,7 @@
     </header>
 
     <main>   
-        <div class="container">
+        <!-- <div class="container"> -->
             <div class="landing" id="home">
                 <div class="row">
                     <div class="hello">
@@ -95,7 +95,7 @@
                     </form>
                 </div>
             </div>
-        </div>
+        <!-- </div> -->
         
     </main>
 
@@ -104,26 +104,29 @@
     const burger = document.getElementById('burger');
     const navb = document.getElementById('navbar')
     const navbar = document.querySelector('.nav');
+    const sectionOne = document.querySelector(".landing");
 
     burger.addEventListener('click', () => {
         navb.classList.toggle('show')
+        navbar.classList.toggle('nav-show')
     })
 
-    function getOffset(el) {
-    const rect = el.getBoundingClientRect();
-        return {
-            left: rect.left + window.scrollX,
-            top: rect.top + window.scrollY
-        };
-    }
-    window.onscroll = () => {
-        // if (window.scrollY > getOffset(document.getElementById('about')).top) {
-        if (window.scrollY > getOffset(document.getElementById('about')).top - 44) {
-            navbar.classList.add('nav-active');
-        } else {
-            navbar.classList.remove('nav-active');
-        }
+    const sectionOneOptions = {
+        rootMargin: "-44px 0px 0px 0px"
     };
+
+    const sectionOneObserver = new IntersectionObserver(function( entries, sectionOneObserver) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                navbar.classList.add("nav-active");
+            } else {
+                navbar.classList.remove("nav-active");
+            }
+        });
+    },
+    sectionOneOptions);
+
+    sectionOneObserver.observe(sectionOne);
 
 </script>
 </html>
