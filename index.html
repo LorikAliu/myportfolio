@@ -24,79 +24,76 @@
     </header>
 
     <main>   
-        <!-- <div class="container"> -->
-            <div class="landing" id="home">
-                <div class="row">
-                    <div class="hello">
-                        <div class="hello-name">Hello, my name is Lorik.</div>
-                    </div>
-                    <div class="img-logo"><img src="images/fsd.svg" alt="computer_image" /></div>
-                    <div class="developer">
-                        <div class="dev-desc">I'm a Full Stack Web Developer</div>
-                    </div>
-                    <div class="empty"></div>
+        <div class="landing" id="home">
+            <div class="row">
+                <div class="hello">
+                    <div class="hello-name">Hello, my name is Lorik.</div>
+                </div>
+                <div class="img-logo"><img src="images/fsd.svg" alt="computer_image" /></div>
+                <div class="developer">
+                    <div class="dev-desc">I'm a Full Stack Web Developer</div>
+                </div>
+                <div class="empty"></div>
+            </div>
+        </div>
+        <div class="about" id="about">
+            <div class="about-row-top">
+                <h1>About Me</h1>
+                <div class="desc">
+                    <div>Full Stack Web Developer adept at building responsive web applications. Passionate about learning new technologies, bringing ideas to life, 
+                        and working with dedicated teams to build efficient and robust applications suited to the user's needs.</div>
                 </div>
             </div>
-            <div class="about" id="about">
-                <div class="about-row-top">
-                    <h1>About Me</h1>
-                    <div class="desc">
-                        <div>Full Stack Web Developer adept at building responsive web applications. Passionate about learning new technologies, bringing ideas to life, 
-                            and working with dedicated teams to build efficient and robust applications suited to the user's needs.</div>
-                    </div>
+            <div class="about-row-bottom">
+                <div class="about-top">
+                    <h1>My Skills</h1>
                 </div>
-                <div class="about-row-bottom">
-                    <div class="about-top">
-                        <h1>My Skills</h1>
-                    </div>
-                    <div class="about-bottom">
-                        <div class="about-items">
-                            <div class="about-header">
-                                <img class="skills-img" src="images/front-end.png" alt="front-end_image">
-                            </div>
-                            <div class="about-footer">
-                                <p>Javascript</p>
-                                <p>React JS</p>
-                                <p>HTML/CSS</p>
-                                <p>Bootstrap</p>
-                                <p>Material UI</p>
-                            </div>
+                <div class="about-bottom">
+                    <div class="about-items">
+                        <div class="about-header">
+                            <img class="skills-img" src="images/front-end.png" alt="front-end_image">
                         </div>
-                        <div class="about-items">
-                            <div class="about-header">
-                                <img src="images/back-end.png" alt="back-end_image">
-                            </div>
-                            <div class="about-footer">
-                                <p>Node Js</p>
-                                <p>Express Js</p>
-                                <p>PHP</p>
-                                <p>MySQL</p>
-                                <p>MongoDB</p>
-                                <p>PostgresSQL</p>
-                            </div>
+                        <div class="about-footer">
+                            <p>Javascript</p>
+                            <p>React JS</p>
+                            <p>HTML/CSS</p>
+                            <p>Bootstrap</p>
+                            <p>Material UI</p>
+                        </div>
+                    </div>
+                    <div class="about-items">
+                        <div class="about-header">
+                            <img src="images/back-end.png" alt="back-end_image">
+                        </div>
+                        <div class="about-footer">
+                            <p>Node Js</p>
+                            <p>Express Js</p>
+                            <p>PHP</p>
+                            <p>MySQL</p>
+                            <p>MongoDB</p>
+                            <p>PostgresSQL</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="contact" id="contact">
-                <div class="contact-row-top">
-                    <h1>Contact Me</h1>
-                </div>
-                <div class="contact-row-bottom">
-                    <form class="frm">
-                        <label for="fName">Full Name</label>
-                        <input type="text" id="fName" name="fullName" placeholder="Your full name.." minlength="6">                
-                        <label for="eml">Email</label>
-                        <input type="email" id="eml" name="email" placeholder="Your email..">                
-                        <label for="subject">Comments/Questions</label>
-                        <textarea id="subject" name="comment" placeholder="Your message.." style="height:200px"
-                        maxlength="1500"></textarea>
-                    
-                        <input type="button" value="Submit">
-                    </form>
-                </div>
+        </div>
+        <div class="contact" id="contact">
+            <div class="contact-row-top">
+                <h1>Contact Me</h1>
             </div>
-        <!-- </div> -->
+            <div class="contact-row-bottom">
+                <form action="https://formspree.io/f/mrgranee" method="POST" class="frm">
+                    <label for="fName">Full Name</label>
+                    <input type="text" id="fName" name="name" placeholder="Your full name.." minlength="6" required> 
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="_replyto" placeholder="Your email.." required>
+                    <label for="subject">Comments/Questions</label>
+                    <textarea id="subject" name="message" placeholder="Your message.." style="height:200px"
+                    maxlength="1500" required></textarea>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
         
     </main>
 
@@ -128,6 +125,11 @@
     sectionOneOptions);
 
     sectionOneObserver.observe(sectionOne);
+
+    const sendMail = () => {
+        const msgBody = document.getElementById("subject").value;
+        window.location.href = "mailto:lorikaliu@hotmail.com?subject=Mail request&body="+msgBody;
+    }
 
 </script>
 </html>
