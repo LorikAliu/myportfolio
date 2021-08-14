@@ -1,0 +1,133 @@
+.header {
+    z-index: 999;
+  
+    .nav {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      padding: 10px 30px 10px 0;
+    
+      width: 100%;
+      position: fixed;
+      z-index: 2;
+    
+      transition: background-color 250ms ease-in;
+  
+  
+        .emptySpace {
+          height: 30px;
+        }
+  
+        .navbarToggler {
+          display: none;
+          background-color: transparent;
+          border: 1px solid transparent;
+          border-radius: 0.25rem;
+      
+          cursor: pointer;
+        }
+      
+        .navbarToggler:focus {
+          outline: none;
+        }
+      
+        .navbarTogglerIcon {
+          display: inline-block;
+          width: 28px;
+          height: 28px;
+          vertical-align: middle;
+          content: "";
+          background: no-repeat center center;
+          background-size: 100% 100%;
+      
+          background-image: url('/burger.svg');
+        }
+  
+        ul {
+          margin: 0;
+          padding: 0;
+          display: flex;
+        }
+        
+        ul li {
+          list-style: none;
+        }
+        
+        li {
+          padding: 0 15px 0 15px;
+        }
+        li a {
+          text-decoration: none;
+          color: rgba(0, 0, 0, 0.815);
+          font-family: 'Roboto', sans-serif;
+          font-size: 20px;
+          width: 100%;
+        }
+        
+        nav ul li :hover {
+          color:black;
+        }
+  
+        .active {
+          border-bottom: 4px solid  rgba(0, 0, 0, 0.815);
+        }
+    
+    }
+  
+    .navActive {
+      background-color: #32A49A;
+      // background-color: #626e6d !important;
+      box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@media (max-width: 460px) {
+    .header {
+      .nav {
+        background-color: #32A49A;
+  
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "empty empty buger"
+        "navbar navbar navbar";
+        padding: 10px 30px 10px 0;
+        width: 100%;
+  
+        .navbarToggler {
+          display: inline-block;
+          display: block;
+        }
+  
+        .navbar {
+          display: none;
+  
+            li {
+              padding: 15px;
+            }
+        }
+  
+        .show {
+          grid-area: navbar;
+          width: auto;
+          justify-self: start;
+          display: flex;
+          flex-direction: column;
+        }
+  
+      }
+      .navShow {
+        background-color: #262A2B;
+  
+        // a {
+        li {
+          a {
+            color: whitesmoke;
+          }
+  
+          a:hover {
+            color: rgba(245, 245, 245, 0.479);
+          }
+        }
+      }
+      
+    }
+  }
