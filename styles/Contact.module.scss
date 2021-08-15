@@ -1,178 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .contact {
-    width: 100%;
-    min-height: 450px;
-    background-color: #F1F7FC;
-    font-family: 'Squada One', cursive;
-    font-size: 18px;
-    color: rgba(0, 0, 0, 0.8);
-    text-align: center;
-  
-    min-height: 800px;
-  
-    // padding: 0 20px;
-    padding: 40px 20px;
-  }
-  .contact h1 {
-    width: 100%;
-    text-align: center;
+  background-color: #F1F7FC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 80px;
 
+  .contactContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 1 850px;
     padding-bottom: 40px;
-  }
-  .contactRowTop {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    padding: 40px 0;
-    width: 100%;
-  }
-  .contactRowBottom {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    height: 80%;
-    width: 100%;
 
-    input[type=text], [type=email], [type=password], select, textarea {
-        width: 100%;
-        padding: 12px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-        margin-top: 6px;
-        margin-bottom: 16px;
-        resize: vertical;
-      }
-      input[type=submit] {
-        background-color: #4CAF50;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-      input[type=submit]:hover {
-        background-color: #45a049;
-      }
-  }
-  .frm {
-    max-height: 650px;
-    min-height: 650px;
-    width: 100%;
-    max-width: 850px;
-    margin-top: auto;
-    margin-bottom: auto;
-    padding: 40px 60px;
-    border-radius: 25px;
-    box-shadow:
-    rgba(0, 0, 0, 0.07) 0px 0.25em 0.5em,
-    rgba(0, 0, 0, 0.07) 0px 0.5em 1em,
-    rgba(0, 0, 0, 0.07) 0px 1em 2em,
-    rgba(0, 0, 0, 0.07) 0px 2em 4em;
-    overflow: hidden;
-  }
-  
-  .warning {
-    color: red;
-  }
-  
-  .tableBordered {
-    border: 1px solid #dee2e6;
-  }
-  .table {
-    width: 100%;
-    margin-bottom: 1rem;
-    color: #212529;
-  }
-//   table {
-//     border-collapse: collapse;
-//   }
-//   tbody {
-//     display: table-row-group;
-//     vertical-align: middle;
-//     border-color: inherit;
-//   }
-//   .text-info {
-//     color: #17a2b8!important;
-//   }
-//   tr {
-//     display: table-row;
-//     vertical-align: inherit;
-//     border-color: inherit;
-//   }
-//   .table th {
-//     border: #17A2B8 solid 1px !important;
-//   }
-//   .table-bordered td, .table-bordered th {
-//     border: 1px solid #17a2b8;
-//   }
-//   .table td, .table th {
-//     padding: .75rem;
-//     vertical-align: top;
-//     border-top: 1px solid #dee2e6;
-//   }
-//   th {
-//     text-align: inherit;
-//   }
-//   th {
-//     display: table-cell;
-//     vertical-align: inherit;
-//     font-weight: bold;
-//     text-align: -internal-center;
-//   }
-// td {
-//     vertical-align: middle;
-//   }
-  .btnDanger {
-    padding: .25rem .5rem;
-    font-size: .875rem;
-    line-height: 1.5;
-    border-radius: .2rem;
-    background-color: #dc3545;
-    color: white;
-    text-decoration: none;
-  }
-  .admin {
-    font-size: 18px;
-    color: rgba(0, 0, 0, 0.8);
-    padding: 40px 250px;
-    height: 100vh;
-    width: 100%;
-    min-height: 450px;
-    background-color: #EAEAEA;
-  }
-  .adminRow {
-    display: block;
-    height: 100%;
-    max-width: 1150px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #fff;
-    padding: 40px 40px;
-    border-radius: 1.5em;
-  }
-  
-  .wrap {
-    width: 900px;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  @media (max-width: 450px) {
-    .contact {
-      padding: 0;
-    }
-  
-    .frm {
-      padding: 40px 10px;
+    .contactRowTop {
       display: flex;
-      flex-direction: column;
+      flex: 0 0 100%;
+      justify-content: center;
+      padding: 40px 0;
+      h1 {
+        font-family: 'Squada One', cursive;
+        font-size: 36px;
+      }
     }
-  
-    /* .frm input {
-      min-width: 300px;
-    } */
-  } 
+    .contactRowBottom {
+      display: flex;
+      flex: 0 0 100%;
+      background-color: #FFFFFF;
+      border-radius: 10px;
+      .frm {
+        display: flex;
+        flex: 1 0 200px;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 10px 30px;
+        border-radius: 10px;
+        box-shadow:
+        rgba(0, 0, 0, 0.07) 0px 0.25em 0.5em,
+        rgba(0, 0, 0, 0.07) 0px 0.5em 1em,
+        rgba(0, 0, 0, 0.07) 0px 1em 2em,
+        rgba(0, 0, 0, 0.07) 0px 2em 4em;
+
+        .inpLabel {
+            display: flex;
+            flex: 0 1 650px;
+            flex-wrap: wrap;
+        
+            label {
+            width: 100%;
+            display: flex;
+            justify-self: start !important;
+            // padding: 10px 0 10px 5px;
+            padding: 20px 0 20px 5px;
+            }
+
+
+            input[type="text"], [type="email"], [type="password"], textarea {
+                // display: flex;
+                // flex: 0 1 650px;
+                width: 100%;
+                font-size: 16px;
+                padding: 7px 10px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background-color: #FAFAFA;
+
+            }
+
+            input[type="text"]:focus-visible, [type="email"]:focus-visible, [type="password"]:focus-visible, textarea:focus-visible { 
+            border: 1px solid rgb(27, 27, 27);
+            outline: none !important;
+            }
+        }
+
+        .btnContainer {
+            display: flex;
+            flex: 0 1 650px;
+            justify-content: center;
+
+            .contactButton {
+                background-color: #4CAF50;
+                color: white;
+                padding: 14px 26px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+      
+                font-size: 18px;
+                margin: 40px 0 20px 0;
+                font-family: 'Roboto', sans-serif;
+              }
+              .contactButton:hover {
+                background-color: #45a049;
+              }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .contact {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 450px) {
+  .contact {
+  }
+
+  .frm {
+  }
+}
+
