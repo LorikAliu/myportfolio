@@ -106,7 +106,7 @@ const Projects = () => {
 
                                 <div className={projectsStyles.containerDots}>
                                     {Array.from({length: imagesData.length}).map((item, index) => (
-                                        <div 
+                                        <div key={index}
                                         onClick={() => moveDot(index + 1)}
                                         className={slideIndex === index + 1 ? `${projectsStyles.dot} ${projectsStyles.active}` : `${projectsStyles.dot}`}
                                         ></div>
@@ -154,7 +154,7 @@ const Projects = () => {
 
                             <div className={projectsStyles.containerDots}>
                                 {Array.from({length: imagesData2.length}).map((item, index) => (
-                                    <div 
+                                    <div key={index}
                                     onClick={() => moveDot2(index + 1)}
                                     className={slideIndex2 === index + 1 ? `${projectsStyles.dot} ${projectsStyles.active}` : `${projectsStyles.dot}`}
                                     ></div>
