@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import navStyles from '../styles/Nav.module.scss'
+import { prefix } from '../utilits/prefix';
 
 const Nav = ({navActv}) => {
 
@@ -23,7 +24,9 @@ const Nav = ({navActv}) => {
     return (
         <header className={navStyles.header}>
             <nav className={navStyles.nav} ref={navbar} id="nav">
-                <div className={navStyles.emptySpace}></div>
+                <div className={navStyles.emptySpace}>
+                    <a className={navStyles.navBtn} href="#landing"><img src={`${prefix}/logo.svg`} alt="logo" /></a>
+                </div>
                 <button className={navStyles.navbarToggler} 
                         id="burger"
                         onClick={bugerMenu}
@@ -31,8 +34,9 @@ const Nav = ({navActv}) => {
                     <span className={navStyles.navbarTogglerIcon}></span>
                 </button>
                 <ul className={navStyles.navbar} ref={navb} id="navbar">
-                    <li><a className={navStyles.navBtn} href="#home">home</a></li>
+                    {/* <li><a className={navStyles.navBtn} href="#landing"><img src={`${prefix}/logo.svg`} alt="logo" /></a></li> */}
                     <li><a className={navStyles.navBtn} href="#about">about</a></li>
+                    <li><a className={navStyles.navBtn} href="#projects">projects</a></li>
                     <li><a className={navStyles.navBtn} href="#contact">contact</a></li>
                 </ul>
             </nav>

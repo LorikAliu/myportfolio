@@ -39,12 +39,14 @@ const Landing = () => {
         ) : (
             <Nav navActv={true} />
         )}
-        <div className={landingStyles.landing} id="home">
+        <div className={landingStyles.landing} id="landing">
             <div className={landingStyles.row}>
                 <div className={landingStyles.hello}>
-                    <div className={landingStyles.helloName}>Hello, my name is Lorik.</div>
+                    <div className={landingStyles.helloName}>Hello<span className={landingStyles.wavingHand}> 👋</span>, my name is Lorik.</div>
                 </div>
-                <div className={landingStyles.imgLogo} ref={ref}><img src={`${prefix}/fsd.svg`} alt="computer_image" /></div>
+                <div className={landingStyles.imgLogo} ref={ref}>
+                    <img src={`${prefix}/fsd.svg`} alt="computer_image" />
+                </div>
                 <div className={landingStyles.developer}>
                     <div className={landingStyles.devDesc}>I&apos;m a Full Stack Web Developer</div>
                 </div>
