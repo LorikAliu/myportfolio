@@ -55,6 +55,52 @@ const Projects = () => {
         setSlideIndex2(index)
     }
 
+    const imgFullScreen = (e) => {
+        // console.log(e)
+        // console.log(e.target)
+        // console.log(e.target.parentNode.parentNode)
+        // console.log(getComputedStyle(e.target.parentNode.parentNode).position)
+        // e.target.classList.toggle = `${projectsStyles.fullpage}`;
+
+        // (el, styleName, value) {
+
+        const prImage = e.target.parentNode.parentNode
+        const prImageValue = getComputedStyle(prImage).position
+
+        const sld = e.target.parentNode
+        const sldValue = getComputedStyle(sld).position
+
+        // const toggleStyle = (el, value) => { 
+        //     if (el.style.position !== value) {  //better to check that it is not the value you have
+        //         el.style.position = value;
+        //       } else {
+        //         el.style.position = 'relative';
+        //       }
+        //     // if (el.style[styleName] !== value) {  //better to check that it is not the value you have
+        //     //   el.style[styleName] = value;
+        //     // } else {
+        //     //   el.style[styleName] = '';
+        //     // }
+        // }
+
+        if (prImageValue !== 'static') {  
+            prImage.style.position = 'static';
+        } else {
+            prImage.style.position = 'relative';
+        }
+
+        if (sldValue !== 'fixed') {  
+            sld.style.position = 'fixed';
+        } else {
+            // sld.style.position = 'relative';
+            sld.style.position = '';
+        }
+          
+
+        // e.target.classList.toggle(`${projectsStyles.fullpage}`);
+        sld.classList.toggle(`${projectsStyles.activeFullpage}`);
+    }
+
     return (
         <div className={projectsStyles.projectsContainer} id="projects">
             <div className={projectsStyles.projectsBG}>
@@ -82,6 +128,7 @@ const Projects = () => {
                                         >
                                             <img 
                                             src={`${prefix}/project1/img${index + 1}.png`} alt={`${obj.title}`}
+                                            onClick={imgFullScreen}
                                             />
                                         </div>
                                     )
@@ -124,43 +171,44 @@ const Projects = () => {
                                 </p>
                                 <p className={projectsStyles.projectTech}>HTML, SASS, React JS, JWT, Node JS, Mongo DB</p>
                             </div>
-                        <div className={projectsStyles.projectImage}>
-                            {imagesData2.map((obj, index) => {
-                                return (
-                                    <div
-                                    key={obj.id}
-                                    className={slideIndex2 === index + 1 ? `${projectsStyles.slide} ${projectsStyles.activeAnim}` : `${projectsStyles.slide}`}
+                            <div className={projectsStyles.projectImage}>
+                                {imagesData2.map((obj, index) => {
+                                    return (
+                                        <div
+                                        key={obj.id}
+                                        className={slideIndex2 === index + 1 ? `${projectsStyles.slide} ${projectsStyles.activeAnim}` : `${projectsStyles.slide}`}
+                                        >
+                                            <img 
+                                            src={`${prefix}/project2/img${index + 1}.png`} alt={`${obj.title}`}
+                                            onClick={imgFullScreen}
+                                            />
+                                        </div>
+                                    )
+                                })}
+
+                                    <button
+                                    onClick={prevSlide2}
+                                    className={`${projectsStyles.btnSlide} ${projectsStyles.prev}`}
                                     >
-                                        <img 
-                                        src={`${prefix}/project2/img${index + 1}.png`} alt={`${obj.title}`}
-                                        />
-                                    </div>
-                                )
-                            })}
+                                    <img src={`${prefix}/left-arrow.svg`} />
+                                    </button>
 
-                                <button
-                                onClick={prevSlide2}
-                                className={`${projectsStyles.btnSlide} ${projectsStyles.prev}`}
-                                >
-                                <img src={`${prefix}/left-arrow.svg`} />
-                                </button>
+                                    <button
+                                    onClick={nextSlide2}
+                                    className={`${projectsStyles.btnSlide} ${projectsStyles.next}`}
+                                    >
+                                    <img src={`${prefix}/right-arrow.svg`} />
+                                    </button>
 
-                                <button
-                                onClick={nextSlide2}
-                                className={`${projectsStyles.btnSlide} ${projectsStyles.next}`}
-                                >
-                                <img src={`${prefix}/right-arrow.svg`} />
-                                </button>
-
-                            <div className={projectsStyles.containerDots}>
-                                {Array.from({length: imagesData2.length}).map((item, index) => (
-                                    <div key={index}
-                                    onClick={() => moveDot2(index + 1)}
-                                    className={slideIndex2 === index + 1 ? `${projectsStyles.dot} ${projectsStyles.active}` : `${projectsStyles.dot}`}
-                                    ></div>
-                                ))}
+                                <div className={projectsStyles.containerDots}>
+                                    {Array.from({length: imagesData2.length}).map((item, index) => (
+                                        <div key={index}
+                                        onClick={() => moveDot2(index + 1)}
+                                        className={slideIndex2 === index + 1 ? `${projectsStyles.dot} ${projectsStyles.active}` : `${projectsStyles.dot}`}
+                                        ></div>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
                         </div>
                     </div>
                 </div>

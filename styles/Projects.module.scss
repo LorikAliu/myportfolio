@@ -2,7 +2,7 @@
     // height: 800px;
     width: 100%;
 
-    position: relative;
+    // position: relative;
     background: #f7f7f7;
 
     .projectsBG {
@@ -88,6 +88,9 @@
                         position: relative;
                         overflow: hidden;
 
+                        box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.15);
+                        border-radius: .5rem;
+
                         // aspect-ratio: 2 / 1;
 
                         .slide {
@@ -102,12 +105,47 @@
                                 width: 100%;
                                 height: 100%;
                                 // object-fit: cover;
+
+                                
+                            }
+
+                            .fullpage {
+                                // position: absolute;
+                                // z-index: 9999;
+                                // top: 0;
+                                // left: 0;
+                                // width: 100vw;
+                                // height: 100vh;
+                                // background-size: contain;
+                                // background-repeat: no-repeat no-repeat;
+                                // background-position: center center;
+                                // background-color: black;
+                                width: 100vw;
+                                position: relative;
+                                left: 50%;
+                                right: 50%;
+                                margin-left: -50vw;
+                                margin-right: -50vw;
                             }
                         }
 
                         .activeAnim {
                             position: relative;
                             opacity: 1;
+                        }
+
+                        .activeFullpage {
+                            // height: 100vh;
+                            // max-height: 100vh;
+                            // width: 100vw;
+                            position: absolute;
+                            max-height: 100vh;
+                            opacity: 1;
+                            height: 100vh;
+                            width: 100vw;
+                            top: 0;
+                            left: 0;
+                            z-index: 999;
                         }
 
                         .btnSlide {
@@ -235,4 +273,5 @@
         }
       }
     }
-  }
+}
+
