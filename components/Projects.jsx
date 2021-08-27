@@ -56,32 +56,11 @@ const Projects = () => {
     }
 
     const imgFullScreen = (e) => {
-        // console.log(e)
-        // console.log(e.target)
-        // console.log(e.target.parentNode.parentNode)
-        // console.log(getComputedStyle(e.target.parentNode.parentNode).position)
-        // e.target.classList.toggle = `${projectsStyles.fullpage}`;
-
-        // (el, styleName, value) {
-
         const prImage = e.target.parentNode.parentNode
         const prImageValue = getComputedStyle(prImage).position
 
         const sld = e.target.parentNode
         const sldValue = getComputedStyle(sld).position
-
-        // const toggleStyle = (el, value) => { 
-        //     if (el.style.position !== value) {  //better to check that it is not the value you have
-        //         el.style.position = value;
-        //       } else {
-        //         el.style.position = 'relative';
-        //       }
-        //     // if (el.style[styleName] !== value) {  //better to check that it is not the value you have
-        //     //   el.style[styleName] = value;
-        //     // } else {
-        //     //   el.style[styleName] = '';
-        //     // }
-        // }
 
         if (prImageValue !== 'static') {  
             prImage.style.position = 'static';
@@ -92,12 +71,9 @@ const Projects = () => {
         if (sldValue !== 'fixed') {  
             sld.style.position = 'fixed';
         } else {
-            // sld.style.position = 'relative';
             sld.style.position = '';
         }
           
-
-        // e.target.classList.toggle(`${projectsStyles.fullpage}`);
         sld.classList.toggle(`${projectsStyles.activeFullpage}`);
     }
 
