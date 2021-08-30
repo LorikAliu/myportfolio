@@ -12,6 +12,11 @@ const Nav = ({navActv}) => {
         navbar.current.classList.toggle(`${navStyles.navShow}`)
     }
 
+    function closeMenu() {
+        navb.current.classList.contains(`${navStyles.show}`) ? navb.current.classList.remove(`${navStyles.show}`) : ''
+        navbar.current.classList.contains(`${navStyles.navShow}`) ? navbar.current.classList.remove(`${navStyles.navShow}`) : ''
+    }
+
     useEffect(()=> {
         if(navActv) {
             navbar.current.classList.add(`${navStyles.navActive}`)
@@ -35,9 +40,9 @@ const Nav = ({navActv}) => {
                 </button>
                 <ul className={navStyles.navbar} ref={navb} id="navbar">
                     {/* <li><a className={navStyles.navBtn} href="#landing"><img src={`${prefix}/logo.svg`} alt="logo" /></a></li> */}
-                    <li><a className={navStyles.navBtn} href="#about">about</a></li>
-                    <li><a className={navStyles.navBtn} href="#projects">projects</a></li>
-                    <li><a className={navStyles.navBtn} href="#contact">contact</a></li>
+                    <li><a className={navStyles.navBtn} onClick={closeMenu} href="#about">about</a></li>
+                    <li><a className={navStyles.navBtn} onClick={closeMenu} href="#projects">projects</a></li>
+                    <li><a className={navStyles.navBtn} onClick={closeMenu} href="#contact">contact</a></li>
                 </ul>
             </nav>
         </header>
