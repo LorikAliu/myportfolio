@@ -107,6 +107,7 @@
                             position: absolute;
                             opacity: 0;
                             transition: opacity ease-in-out 0.4s;
+                            // transition: opacity linear 0.4s;
                             width: 100%;
 
                             img {
@@ -115,7 +116,6 @@
                                 // object-fit: cover;
                                 cursor: pointer;
                                 border-radius: .5rem;
-                                
                             }
                         }
 
@@ -235,22 +235,29 @@
                         // box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.15);
                         // border: 1px solid #74858b;
 
-                        // padding: 0 3rem 3rem 3rem;
+                        padding: 0 3rem 3rem 3rem;
                         border: none;
                         box-shadow: none;
 
-                        // height: calc(100% - 6rem);
-                        // width: calc(100% - 6rem);
 
                         .slide {
-                            // height: calc(100% - 6rem);
+                            // height: calc(100% - 3rem);
+                            // width: calc(100% - 6rem);
+                            top: 0;
+                            left: 3rem;
                             height: calc(100% - 3rem);
                             width: calc(100% - 6rem);
 
-                            img {
-                                // margin: 0 3rem 3rem 3rem;
-                                margin: 0 3rem 0 3rem;
-                            }
+                            // img {
+                            //     margin: 0 3rem 0 3rem;
+                            // }
+                        }
+
+                        .activeAnim {
+                            top: 0;
+                            left: 0;
+                            height: 100%;
+                            width: 100%;
                         }
                     }
                 }
@@ -277,15 +284,26 @@
                         border-radius: 0;
                         border: none;
                         // border-bottom: 1px solid #74858b;
+                        padding: 0;
 
                         .slide {
+                            // height: 100%;
+                            // width: 100%;
+                            top: 0;
+                            left: 0;
                             height: 100%;
                             width: 100%;
 
-                            img {
-                                // margin: 0 3rem 0 3rem;
-                                margin: 0;
-                            }
+                            // img {
+                            //     margin: 0;
+                            // }
+                        }
+
+                        .activeAnim {
+                            top: 0;
+                            left: 0;
+                            height: 100%;
+                            width: 100%;
                         }
                     }
                 }
