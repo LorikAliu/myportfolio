@@ -5,13 +5,14 @@
   height: 100%;
   width: 100%;
 
-  background: #f7f7f7;
+  // background: #f7f7f7;
+  background: #F2F4F9;
 
   .formContainer {
     // display: flex;   this breaks mobile view
     // justify-content: center;
     // align-items: center;
-    height: 700px;
+    // height: 700px;
     padding: 20px 0;
     
     // background-image: url('../public/contactBG.svg');
@@ -70,6 +71,15 @@
           justify-content: center;
           padding: 10px 0;
 
+          flex-wrap: wrap;
+
+          .inputErrorContainer {
+            display: flex;
+            flex-wrap: wrap;
+            flex: 1 0 300px;
+            max-width: 600px;
+          }
+
           label {
             display: none;
           }
@@ -79,8 +89,9 @@
             color: #555f64;
             border-bottom: 1px solid #cfcfcf!important;
             // flex: 1 0 350px;
-            flex: 1 0 300px;
-            max-width: 600px;
+            // flex: 1 0 300px;
+            // max-width: 600px;
+            flex-basis: 100%;
             margin: 0;
             margin-bottom: 15px;
             box-shadow: none;
@@ -100,36 +111,67 @@
             border-bottom: 1px solid #8b8787;
             box-shadow: 0 6px 6px -6px #cacaca;
           }
+
+          .error {
+            flex-basis: 100%;
+            color: red;
+
+            padding: 5px 0;
+            margin-top: -5px;
+          }
         }
         .textareaContainer {
-          height: 250px;
-          min-height: 50px;
+          // height: 250px;
+          // min-height: 50px;
+          // min-height: 250px;
           display: flex; 
           flex-basis: 100%;
           justify-content: center;
           padding: 10px 0;
 
-          .textarea {
-            // flex: 1 0 350px;
+          .inputErrorContainer {
+            display: flex;
+            flex-wrap: wrap;
             flex: 1 0 300px;
             max-width: 600px;
-            border: 1px solid #cfcfcf;
-            padding: 0.5rem;
-            font-size: 1.1rem;
-            font-family: 'Urbanist', sans-serif;
-            color: #555f64;
+
+            .textarea {
+              // flex: 1 0 350px;
+              // flex: 1 0 300px;
+              // max-width: 600px;
+              flex-basis: 100%;
+              border: 1px solid #cfcfcf;
+              padding: 0.5rem;
+              font-size: 1.1rem;
+              font-family: 'Urbanist', sans-serif;
+              color: #555f64;
+
+              // height: 100%;
+              min-height: 250px;
+            }
+  
+            textarea:focus {
+              outline: 0;
+              border: 1px solid #cacaca;
+              -webkit-box-shadow: 0 0 5px #cacaca;
+              box-shadow: 0 0 5px #cacaca;
+              -webkit-transition: border-color .25s ease-in-out,-webkit-box-shadow .5s;
+              transition: border-color .25s ease-in-out,-webkit-box-shadow .5s;
+              transition: box-shadow .5s,border-color .25s ease-in-out;
+              transition: box-shadow .5s,border-color .25s ease-in-out,-webkit-box-shadow .5s;
+            }
+
+            .error {
+              flex-basis: 100%;
+              color: red;
+
+              padding: 5px 0;
+              margin-bottom: 10px;
+              height: 20px;
+            }
           }
 
-          textarea:focus {
-            outline: 0;
-            border: 1px solid #cacaca;
-            -webkit-box-shadow: 0 0 5px #cacaca;
-            box-shadow: 0 0 5px #cacaca;
-            -webkit-transition: border-color .25s ease-in-out,-webkit-box-shadow .5s;
-            transition: border-color .25s ease-in-out,-webkit-box-shadow .5s;
-            transition: box-shadow .5s,border-color .25s ease-in-out;
-            transition: box-shadow .5s,border-color .25s ease-in-out,-webkit-box-shadow .5s;
-          }
+          
         }
 
         ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */

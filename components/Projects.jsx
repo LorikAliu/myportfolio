@@ -64,8 +64,10 @@ const Projects = () => {
 
         if (prImageValue !== 'static') {  
             prImage.style.position = 'static';
+            document.querySelector('html').style.scrollbarWidth = 'none'
         } else {
             prImage.style.position = 'relative';
+            document.querySelector('html').style.scrollbarWidth = 'auto'
         }
 
         if (sldValue !== 'fixed') {  

@@ -86,9 +86,8 @@ const About = () => {
                                 <div className={aboutStyles.skillsList}>
                                     <p>Node Js</p>
                                     <p>Express Js</p>
-                                    <p>PHP</p>
-                                    <p>MySQL</p>
                                     <p>MongoDB</p>
+                                    <p>MySQL</p>
                                     <p>PostgresSQL</p>
                                 </div>
                             </div>
