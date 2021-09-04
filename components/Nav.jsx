@@ -39,7 +39,6 @@ const Nav = ({navActv}) => {
                     <span className={navStyles.navbarTogglerIcon}></span>
                 </button>
                 <ul className={navStyles.navbar} ref={navb} id="navbar">
-                    {/* <li><a className={navStyles.navBtn} href="#landing"><img src={`${prefix}/logo.svg`} alt="logo" /></a></li> */}
                     <li><a className={navStyles.navBtn} onClick={closeMenu} href="#about">about</a></li>
                     <li><a className={navStyles.navBtn} onClick={closeMenu} href="#projects">projects</a></li>
                     <li><a className={navStyles.navBtn} onClick={closeMenu} href="#contact">contact</a></li>

@@ -1,27 +1,11 @@
 .contactContainer {
-  // display: flex;
-  // justify-content: center;
-
   height: 100%;
   width: 100%;
-
-  // background: #f7f7f7;
   background: #F2F4F9;
 
   .formContainer {
-    // display: flex;   this breaks mobile view
-    // justify-content: center;
-    // align-items: center;
-    // height: 700px;
     padding: 20px 0;
-    
-    // background-image: url('../public/contactBG.svg');
-    // background-repeat: no-repeat;
-    // background-size: cover;
-    // max-width: 1920px;
-
     margin: 0 auto;
-
     padding-top: 40px;
 
     form {
@@ -29,7 +13,6 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      // flex: 1 0 400px;
       flex: 1 0 300px;
       max-width: 850px;
       background-color: #fff;
@@ -88,9 +71,6 @@
             font-size: 1.1rem;
             color: #555f64;
             border-bottom: 1px solid #cfcfcf!important;
-            // flex: 1 0 350px;
-            // flex: 1 0 300px;
-            // max-width: 600px;
             flex-basis: 100%;
             margin: 0;
             margin-bottom: 15px;
@@ -121,9 +101,6 @@
           }
         }
         .textareaContainer {
-          // height: 250px;
-          // min-height: 50px;
-          // min-height: 250px;
           display: flex; 
           flex-basis: 100%;
           justify-content: center;
@@ -136,17 +113,12 @@
             max-width: 600px;
 
             .textarea {
-              // flex: 1 0 350px;
-              // flex: 1 0 300px;
-              // max-width: 600px;
               flex-basis: 100%;
               border: 1px solid #cfcfcf;
               padding: 0.5rem;
               font-size: 1.1rem;
               font-family: 'Urbanist', sans-serif;
               color: #555f64;
-
-              // height: 100%;
               min-height: 250px;
             }
   

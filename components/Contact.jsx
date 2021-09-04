@@ -8,8 +8,6 @@ const Contact = () => {
 
     const onSubmit = async (data) => {
         try {
-            console.log('Form has been submited successfuly!')
-
             fetch('https://formspree.io/f/mrgranee', {
                 method: 'POST',
                 headers: {
@@ -18,12 +16,10 @@ const Contact = () => {
                 body: JSON.stringify(data)
             })
             .then((r) => {
-                // console.log(r)
                 return r.json()
             })
             .then((response) => {
-                // console.log(response)
-                // https://formspree.io/thanks?language=en  
+                console.log(response)
                 window.location.href = "https://formspree.io/thanks?language=en";       
             }).catch(e => {
                 console.log(e)

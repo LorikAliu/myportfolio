@@ -45,7 +45,7 @@ const Landing = () => {
                     <div className={landingStyles.helloName}>Hello<span className={landingStyles.wavingHand}> 👋</span>, my name is Lorik.</div>
                 </div>
                 <div className={landingStyles.imgLogo} ref={ref}>
-                    <img src={`${prefix}/fsd.svg`} alt="computer_image" />
+                    <img src={`${prefix}/computer-img.svg`} alt="computer_image" />
                 </div>
                 <div className={landingStyles.developer}>
                     <div className={landingStyles.devDesc}>I&apos;m a Full Stack Web Developer</div>
