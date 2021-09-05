@@ -48,17 +48,6 @@ const About = () => {
                         I like to code things from stratch, and enjoy bringing ideas to life inside the browser.
                     </p>
                 </div>
-                <div className="skillCategories">
-                    <div className="UI_UX">
-
-                    </div>
-                    <div className="frontend">
-
-                    </div>
-                    <div className="backend">
-
-                    </div>
-                </div>
                 <div className={aboutStyles.aboutSkills}>
                     <div className={aboutStyles.skillsTitle}>
                         <h1>Technologies I Use</h1>
