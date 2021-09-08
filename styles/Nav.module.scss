@@ -12,7 +12,7 @@
 
     transition: background-color 250ms ease-in;
 
-    .emptySpace {
+    .logo {
       height: 60px;
       display: flex;
       justify-content: flex-start;
@@ -20,18 +20,34 @@
       position: relative;
       overflow: hidden;
 
-      a {
-        display: flex;
-        align-items: center;
-        width: 50px;
-        position: relative;
+      span {
         height: 100%;
-
+        cursor: pointer;
+        
         img {
-          width: 100%;
-          height: 150%;
+          display: flex;
+          align-items: flex-start;
+          width: 50px;
+          position: relative;
+          height: 100%;
+  
+          // width: 90%;
+          // height: 90%;
         }
       }
+
+      // a {
+      //   display: flex;
+      //   align-items: center;
+      //   width: 50px;
+      //   position: relative;
+      //   height: 100%;
+
+      //   img {
+      //     width: 100%;
+      //     height: 150%;
+      //   }
+      // }
     }
 
     .navbarToggler {
@@ -64,6 +80,8 @@
       display: flex;
 
       align-items: center;
+
+      width: 100%;
     }
 
     ul li {
@@ -71,16 +89,27 @@
     }
 
     li {
-      padding: 0 15px 0 15px;
+      // padding: 0 15px 0 15px;
 
       width: 100%;
     }
-    li a {
-      text-decoration: none;
-      color: rgba(0, 0, 0, 0.815);
-      font-family: "Roboto", sans-serif;
-      font-size: 20px;
-      width: 100%;
+    li {
+      span {
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.815);
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+        width: 100%;
+
+        cursor: pointer;
+
+        // height: 100%;
+        // width: 100%;
+        // padding: 0 15px 0 15px;
+        padding: 15px;
+
+        display: block;
+      }
     }
 
     nav ul li :hover {
@@ -105,12 +134,12 @@
 
       grid-template-rows: auto;
       grid-template-areas:
-        "empty empty buger"
+        "logo logo buger"
         "navbar navbar navbar";
       padding: 0 30px 0 0;
       width: 100%;
 
-      .emptySpace {
+      .logo {
         padding-left: 20px;
       }
 
@@ -123,13 +152,14 @@
         display: none;
 
         li {
-          padding: 15px;
+          // padding: 15px;
+          // padding: 15px 0;
         }
       }
 
       .show {
         grid-area: navbar;
-        width: auto;
+        // width: auto;
         justify-self: start;
         display: flex;
         flex-direction: column;
@@ -139,11 +169,11 @@
       background-color: #262a2b;
 
       li {
-        a {
+        span {
           color: whitesmoke;
         }
 
-        a:hover {
+        span:hover {
           color: rgba(245, 245, 245, 0.479);
         }
       }

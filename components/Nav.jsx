@@ -1,8 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import navStyles from '../styles/Nav.module.scss'
 import { prefix } from '../utilits/prefix';
 
 const Nav = ({navActv}) => {
+
+    const router = useRouter()
 
     const navb = useRef()
     const navbar = useRef()
@@ -12,10 +16,28 @@ const Nav = ({navActv}) => {
         navbar.current.classList.toggle(`${navStyles.navShow}`)
     }
 
-    function closeMenu() {
-        navb.current.classList.contains(`${navStyles.show}`) ? navb.current.classList.remove(`${navStyles.show}`) : ''
-        navbar.current.classList.contains(`${navStyles.navShow}`) ? navbar.current.classList.remove(`${navStyles.navShow}`) : ''
-    }
+    // function closeMenu() {
+    //     console.log('asdasd')
+    //     console.log(navb.current.classList.contains(`${navStyles.show}`))
+    //     console.log(navbar.current.classList.contains(`${navStyles.navShow}`))
+    //     navb.current.classList.contains(`${navStyles.show}`) ? navb.current.classList.remove(`${navStyles.show}`) : ''
+    //     navbar.current.classList.contains(`${navStyles.navShow}`) ? navbar.current.classList.remove(`${navStyles.navShow}`) : ''
+    // }
+
+    const closeMenu = (e, path) => {
+        // e.preventDefault()
+
+        // if (path === "/about") {
+        //     router.push(path)
+        // }
+        // if (path === "/projects") {
+        //     router.push(path)
+        // }
+        // if (path === "/contact") {
+        //     router.push(path)
+        // }
+        console.log(e)
+    };
 
     useEffect(()=> {
         if(navActv) {
@@ -29,8 +51,8 @@ const Nav = ({navActv}) => {
     return (
         <header className={navStyles.header}>
             <nav className={navStyles.nav} ref={navbar} id="nav">
-                <div className={navStyles.emptySpace}>
-                    <a className={navStyles.navBtn} href="#landing"><img src={`${prefix}/logo.svg`} alt="logo" /></a>
+                <div className={navStyles.logo}>
+                    <Link className={navStyles.navBtn} href="#landing"><span onClick={closeMenu}><img src={`${prefix}/logo.svg`} alt="logo" /></span></Link>
                 </div>
                 <button className={navStyles.navbarToggler} 
                         id="burger"
@@ -39,9 +61,10 @@ const Nav = ({navActv}) => {
                     <span className={navStyles.navbarTogglerIcon}></span>
                 </button>
                 <ul className={navStyles.navbar} ref={navb} id="navbar">
-                    <li><a className={navStyles.navBtn} onClick={closeMenu} href="#about">about</a></li>
-                    <li><a className={navStyles.navBtn} onClick={closeMenu} href="#projects">projects</a></li>
-                    <li><a className={navStyles.navBtn} onClick={closeMenu} href="#contact">contact</a></li>
+                    {/* <li><Link className={navStyles.navBtn} onClick={closeMenu} href="#about">about</Link></li> */}
+                    <li><Link className={navStyles.navBtn} href="#about"><span onClick={closeMenu}>about</span></Link></li>
+                    <li><Link className={navStyles.navBtn} href="#projects"><span onClick={closeMenu}>projects</span></Link></li>
+                    <li><Link className={navStyles.navBtn} href="#contact"><span onClick={closeMenu}>contact</span></Link></li>
                 </ul>
             </nav>
         </header>
