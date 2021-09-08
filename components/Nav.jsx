@@ -16,28 +16,10 @@ const Nav = ({navActv}) => {
         navbar.current.classList.toggle(`${navStyles.navShow}`)
     }
 
-    // function closeMenu() {
-    //     console.log('asdasd')
-    //     console.log(navb.current.classList.contains(`${navStyles.show}`))
-    //     console.log(navbar.current.classList.contains(`${navStyles.navShow}`))
-    //     navb.current.classList.contains(`${navStyles.show}`) ? navb.current.classList.remove(`${navStyles.show}`) : ''
-    //     navbar.current.classList.contains(`${navStyles.navShow}`) ? navbar.current.classList.remove(`${navStyles.navShow}`) : ''
-    // }
-
-    const closeMenu = (e, path) => {
-        // e.preventDefault()
-
-        // if (path === "/about") {
-        //     router.push(path)
-        // }
-        // if (path === "/projects") {
-        //     router.push(path)
-        // }
-        // if (path === "/contact") {
-        //     router.push(path)
-        // }
-        console.log(e)
-    };
+    function closeMenu() {
+        navb.current.classList.contains(`${navStyles.show}`) ? navb.current.classList.remove(`${navStyles.show}`) : ''
+        navbar.current.classList.contains(`${navStyles.navShow}`) ? navbar.current.classList.remove(`${navStyles.navShow}`) : ''
+    }
 
     useEffect(()=> {
         if(navActv) {
