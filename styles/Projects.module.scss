@@ -122,20 +122,14 @@
                 left: 0;
                 z-index: 999 !important;
                 overflow: hidden;
+                // background: #000;
+                background: rgb(29, 29, 29);
 
-                background: #000;
-
-                // .imgContainer {
-                //   background: #000;
-                //   height: 100%;
-                //   width: 100%;
-                //   position: absolute;
-                // }
+                overflow: hidden;
 
                 img {
                   width: 100%;
                   height: auto;
-                  // background: #000;
                   border-radius: 0;
                   // aspect-ratio: 4/3;
 
@@ -177,13 +171,13 @@
             .prev {
               top: 50%;
               left: 20px;
-              transform: translateY(-60%);
+              transform: translateY(-50%);
             }
 
             .next {
               top: 50%;
               right: 20px;
-              transform: translateY(-60%);
+              transform: translateY(-50%);
             }
 
             .containerDots {
@@ -275,6 +269,14 @@
                 width: 100%;
                 z-index: auto;
               }
+
+              .prev {
+                transform: translateY(calc(-1rem - 60%));
+              }
+
+              .next {
+                transform: translateY(calc(-1rem - 60%));
+              }
             }
           }
         }
@@ -304,6 +306,20 @@
                 left: 0;
                 height: 100%;
                 width: 100%;
+
+                .activeFullpage {
+                  img {
+                    aspect-ratio: 4/3;
+                  }
+                }
+              }
+
+              .prev {
+                transform: translateY(-50%);
+              }
+
+              .next {
+                transform: translateY(-50%);
               }
             }
           }

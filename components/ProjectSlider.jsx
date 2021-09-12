@@ -33,36 +33,13 @@ const ProjectSlider = ({ projectsData, projectDir }) => {
         const slide = imgContainer.parentNode
         const projectImage = slide.parentNode
 
-        console.log(imgContainer, " ", slide, " ", projectImage)
+        // document.querySelector('body').style.overflow = "hidden";
+        document.querySelector('body').classList.toggle('bodyToggler');
 
         projectImage.classList.toggle(`${projectsStyles.projectImageToggler}`);
         slide.classList.toggle(`${projectsStyles.slideToggler}`);  
         imgContainer.classList.toggle(`${projectsStyles.activeFullpage}`);
     }
-
-    // const imgFullScreen = (e) => {
-    //     const prImage = e.target.parentNode.parentNode
-    //     const prImageValue = getComputedStyle(prImage).position
-
-    //     const sld = e.target.parentNode
-    //     const sldValue = getComputedStyle(sld).position
-
-    //     if (prImageValue !== 'static') {  
-    //         prImage.style.position = 'static';
-    //         document.querySelector('html').style.scrollbarWidth = 'none'
-    //     } else {
-    //         prImage.style.position = 'relative';
-    //         document.querySelector('html').style.scrollbarWidth = 'auto'
-    //     }
-
-    //     if (sldValue !== 'fixed') {  
-    //         sld.style.position = 'fixed';
-    //     } else {
-    //         sld.style.position = '';
-    //     }
-          
-    //     sld.classList.toggle(`${projectsStyles.activeFullpage}`);
-    // }
 
     return (
         <div className={projectsStyles.projectImage}>
@@ -71,12 +48,7 @@ const ProjectSlider = ({ projectsData, projectDir }) => {
                 <div
                 key={obj.id}
                 className={slideIndex === index + 1 ? `${projectsStyles.slide} ${projectsStyles.activeAnim}` : `${projectsStyles.slide}`}
-                // onClick={imgFullScreen}
                 >
-                    {/* <img 
-                    src={`${prefix}/${projectDir}/img${index + 1}.png`} alt={`${obj.title}`}
-                    // onClick={imgFullScreen}
-                    /> */}
                     <div className={projectsStyles.imgContainer} onClick={imgFullScreen}>
                         <img 
                         src={`${prefix}/${projectDir}/img${index + 1}.png`} alt={`${obj.title}`}
