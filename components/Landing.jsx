@@ -44,13 +44,16 @@ const Landing = () => {
                 <div className={landingStyles.hello}>
                     <div className={landingStyles.helloName}>Hello<span className={landingStyles.wavingHand}> 👋</span>, my name is Lorik.</div>
                 </div>
-                <div className={landingStyles.imgLogo} ref={ref}>
+                <div className={landingStyles.img} ref={ref}>
                     <img src={`${prefix}/computer-img.svg`} alt="computer_image" />
                 </div>
                 <div className={landingStyles.developer}>
                     <div className={landingStyles.devDesc}>I&apos;m a Full Stack Web Developer</div>
                 </div>
                 <div className={landingStyles.empty}></div>
+            </div>
+            <div className={landingStyles.row2}>
+
             </div>
         </div>
         </>

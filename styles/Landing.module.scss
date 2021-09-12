@@ -25,10 +25,22 @@
   position: relative;
   height: 100%;
   width: 100%;
-  background-image: url("../public/landing-bg.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  // background-image: url("../public/landing-bg.png");
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background: #fefdfe;
+  background: #fff;
+  // clip-path: polygon(0% 0%, 0 50%, 100% 50%, 100% 100%, 100% 100%, 55% 100%, 45% 0);
+}
+
+.row2 {
+  height: 100%;
+  width: 100%;
+  // background: pink;
+  background: #32a49a;
+  position: absolute;
+  clip-path: polygon(0% 0%, 0 50%, 100% 50%, 100% 100%, 100% 100%, 55% 100%, 45% 0);
 }
 
 .hello {
@@ -46,6 +58,8 @@
 
 .helloName {
   max-width: 280px;
+
+  z-index: 1;
 }
 
 .wavingHand {
@@ -83,7 +97,7 @@
   }
 }
 
-.imgLogo {
+.img {
   height: 50%;
   max-height: 485px;
   flex: 1 1 50%;
@@ -91,7 +105,7 @@
 
   display: flex;
 }
-.imgLogo img {
+.img img {
   height: 100%;
   width: 100%;
 }
@@ -120,6 +134,16 @@
 @media (max-width: 1000px) {
   .row {
     background-image: url("../public/landing-bg-mobile.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .row2 {
+    display: none;
   }
 
   .landing {
@@ -128,27 +152,39 @@
 
   .hello {
     order: 2;
-    height: auto;
-    min-height: 0;
-    flex: 1 0 100%;
+    // height: auto;
+    // min-height: 0;
+    // flex: 1 0 100%;
+    // flex: 0 0 25%;
     color: rgba(0, 0, 0, 0.8);
+
+    min-height: 0;
+    // flex: 0 0 auto;
+    flex-basis: 0;
   }
-  .imgLogo {
+
+  .img {
     order: 1;
-    max-width: 480px;
-    flex: 1 0 100%;
+    // max-width: 480px;
+    // flex: 1 0 100%;
+    flex: 0 0 50%;
     align-content: flex-start;
+
+    overflow: hidden;
   }
 
   .developer {
     order: 3;
-    height: auto;
-    flex: 1 0 100%;
-    min-height: 0;
+    // height: auto;
+    // flex: 1 0 100%;
+    // flex: 0 0 25%;
+    flex: 1 0 25%;
+    // min-height: 0;
   }
   .empty {
     order: 4;
     height: 25%;
     flex: 1 0 100%;
+    display: none;
   }
 }
