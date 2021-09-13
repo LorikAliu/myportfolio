@@ -132,10 +132,10 @@
     // height: 960px;
 
     .row {
-      background-image: url("../public/landing-bg-mobile.png");
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
+      // background-image: url("../public/landing-bg-mobile.png");
+      // background-position: center;
+      // background-repeat: no-repeat;
+      // background-size: cover;
 
       flex-direction: column;
       flex-wrap: nowrap;
@@ -146,9 +146,10 @@
         order: 2;
         color: rgba(0, 0, 0, 0.8);
         min-height: 0;
-        flex: 0 1 25%;
+        // flex: 0 1 25%;
+        flex: 1 1 auto;
         // flex: 0 1 auto;
-        padding-top: 15px;
+        // padding-top: 15px;
       }
     
       .img {
@@ -157,6 +158,7 @@
         align-content: flex-start;
     
         overflow: hidden;
+        background: #32a49a;
       }
     
       .developer {

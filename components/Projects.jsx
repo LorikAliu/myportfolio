@@ -21,7 +21,7 @@ const Projects = () => {
                                 <p className={projectsStyles.projectP}>
                                     A web app that lets its users manage products of their store 
                                     with a simple to use UI. User can add new products, 
-                                    make sales, and show various statistics about its sales.
+                                    make sales, and generate various reports about the sales.
                                 </p>
                                 <p className={projectsStyles.projectTech}>HTML, CSS, Javascript, Ajax, Local Storage, Node JS, MySQL</p>
                             </div>
