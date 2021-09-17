@@ -10,8 +10,11 @@ function useOnScreen(options) {
 
     useEffect(() => {
         const observer = new IntersectionObserver(([entry]) => {
+            // console.log(entry)
             setVisible(entry.isIntersecting)
         }, options)
+
+        // console.log(ref.current)
 
         if(ref.current) {
             observer.observe(ref.current)

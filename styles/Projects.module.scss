@@ -1,404 +1,221 @@
-.projectsContainer {
-  width: 100%;
+.projects--container {
   background: #f2f4f9;
+  background-image: url("../public/projects-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
 
-  .projectsBG {
-    height: 100%;
-    width: 100%;
-    // background-image: url("../public/projects-bg.svg");
-    background-image: url("../public/projects-bg.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-    width: 100%;
+.projects--wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 40px;
+  gap: 30px;
+}
 
-    max-width: 1920px;
+.projects--title {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.projects-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.15);
+  padding: 15px 20px;
+
+  @media (max-width: 1305px) {
+    max-width: 700px;
+  }
+
+  @media (max-width: 720px) {
+    border-radius: 0;
+    padding: 15px 0;
+  }
+
+  @media (max-width: 675px) {
+    padding: 0;
+  }
+}
+
+.projects-card__background {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 0.5rem;
+  box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.15);
+}
+
+.projects-text {
+  padding: 0 3rem;
+
+  h1 {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3rem;
+    color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 3rem 0 1.3rem 0;
+  }
+
+  &__description {
+    font-family: "Urbanist", sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+
+    max-width: 450px;
+  }
+
+  &__technologies {
+    font-family: "Urbanist", sans-serif;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1.3rem 0 3rem 0;
+  }
+}
+
+.projects-image {
+  max-width: 700px;
+  width: 100%;
+  max-height: 500px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgb(23, 53, 53);
+
+  @media (max-width: 720px) {
+    max-width: 658px;
     margin: 0 auto;
-
-    .projectsWrapper {
-      height: 100%;
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding-top: 40px;
-      gap: 30px;
-
-      .projectsTitle {
-        width: 100%;
-
-        h1 {
-          font-family: "Roboto", sans-serif;
-          font-size: 2rem;
-          color: rgba(0, 0, 0, 0.8);
-          text-align: center;
-          padding: 3rem 0 1.3rem 0;
-        }
-      }
-
-      .projectContainer {
-        width: 100%;
-
-        .projectWrapper {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 50px;
-
-          .projectDescription {
-            flex: 1 0 300px;
-            max-width: 550px;
-            background: #fff;
-            box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.15);
-            border-radius: 0.5rem;
-            padding: 0 3rem;
-
-            h1 {
-              text-align: center;
-              font-family: "Roboto", sans-serif;
-              font-size: 1.3rem;
-              color: rgba(0, 0, 0, 0.8);
-              text-align: center;
-              padding: 3rem 0 1.3rem 0;
-            }
-
-            .projectP {
-              font-family: "Urbanist", sans-serif;
-              font-size: 1.1rem;
-              line-height: 1.5;
-            }
-
-            .projectTech {
-              font-family: "Urbanist", sans-serif;
-              font-size: 0.9rem;
-              color: rgba(0, 0, 0, 0.75);
-              padding: 1.3rem 0 3rem 0;
-            }
-          }
-
-          .projectImage {
-            max-width: 700px;
-            width: 100%;
-            max-height: 500px;
-            position: relative;
-            overflow: hidden;
-
-            box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.15);
-            border-radius: 0.5rem;
-            border: 1px solid rgba(51, 51, 51, 0.4);
-            background: #fff;
-
-            .slide {
-              max-height: 400px;
-              height: 100%;
-              position: absolute;
-              opacity: 0;
-              transition: opacity ease-in-out 0.4s;
-              width: 100%;
-
-              .imgContainer {
-                // display: block;
-                height: 100%;
-                cursor: pointer;
-                // width: 100%;
-                // position: relative;
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  cursor: pointer;
-                  border-radius: 0.5rem;
-                }
-              }
-
-              .activeFullpage {
-                // position: absolute;
-                position: fixed;
-                max-height: 100vh;
-                opacity: 1;
-                height: 100vh;
-                width: 100vw;
-                top: 0;
-                left: 0;
-                z-index: 999 !important;
-                overflow: hidden;
-                // background: #000;
-                background: rgb(29, 29, 29);
-
-                overflow: hidden;
-
-                img {
-                  width: 100%;
-                  height: auto;
-                  border-radius: 0;
-                  // aspect-ratio: 4/3;
-
-                  position: absolute;
-                  top: 50%;
-                  left: 50%;
-                  transform: translate(-50%, -50%);
-                }
-              }
-            }
-
-            .activeAnim {
-              position: relative;
-              opacity: 1;
-            }
-
-            .slideToggler {
-              position: static;
-            }
-
-            .btnSlide {
-              width: 60px;
-              height: 60px;
-              border-radius: 50%;
-              border: 1px solid rgba(34, 34, 34, 0.287);
-              position: absolute;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              cursor: pointer;
-
-              img {
-                width: 25px;
-                height: 25px;
-                pointer-events: none;
-              }
-            }
-
-            .prev {
-              top: 50%;
-              left: 20px;
-              transform: translateY(-50%);
-            }
-
-            .next {
-              top: 50%;
-              right: 20px;
-              transform: translateY(-50%);
-            }
-
-            .containerDots {
-              position: absolute;
-              bottom: 10px;
-              left: 50%;
-              transform: translateX(-50%);
-              display: flex;
-
-              background-color: rgba(97, 96, 96, 0.4);
-              border-radius: 0.5rem;
-              padding: 3px 0;
-
-              .dot {
-                width: 20px;
-                height: 20px;
-                border-radius: 50%;
-                border: 3px solid #f1f1f1;
-                margin: 0 5px;
-                background: #f1f1f1;
-
-                cursor: pointer;
-              }
-
-              .active {
-                background: rgb(32, 32, 32);
-              }
-            }
-          }
-
-          .projectImageToggler {
-            position: static;
-          }
-        }
-      }
-    }
   }
-  // .projectsBG::after {
-  //   content: "";
-  //   position: absolute;
-  //   top: -10px;
-  //   height: 20px;
-  //   width: 100%;
-  //   max-width: 1920px;
-  //   background: #32a49a;
-  // }
+  @media (max-width: 675px) {
+    border: none;
+  }
+
+  .image-slide {
+    max-height: 400px;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity ease-in-out 0.4s;
+    width: 100%;
+  }
+  
+  .image-slide--active {
+    position: relative;
+    opacity: 1;
+  }
 }
 
-@media (max-width: 1300px) {
-  .projectsContainer {
-    .projectsBG {
-      .projectsWrapper {
-        .projectContainer {
-          .projectWrapper {
-            max-width: 700px;
-            margin: 0 auto;
-            gap: 0;
-            box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.15);
-            border-radius: 0.5rem;
 
-            .projectDescription {
-              flex-basis: 100%;
-              max-width: 100%;
-              border-radius: 0.5rem 0.5rem 0 0;
-              box-shadow: none;
-            }
 
-            .projectImage {
-              border-radius: 0 0 0.5rem 0.5rem;
-              padding: 0 3rem 3rem 3rem;
-              border: none;
-              box-shadow: none;
+.slideToggler {
+  position: static;
+}
 
-              .slide {
-                top: 0;
-                left: 3rem;
-                height: calc(100% - 3rem);
-                width: calc(100% - 6rem);
-                z-index: -10;
+.image-slide__background {
+  height: 100%;
+  cursor: pointer;
 
-                border-radius: 0.5rem;
-                border: 1px solid rgba(51, 51, 51, 0.4);
-              }
+  img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+}
 
-              .activeAnim {
-                top: 0;
-                left: 0;
-                height: 100%;
-                width: 100%;
-                z-index: auto;
-              }
+.activeFullpage {
+  position: fixed;
+  max-height: 100vh;
+  opacity: 1;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 999 !important;
+  overflow: hidden;
+  background: rgb(29, 29, 29);
+  overflow: hidden;
 
-              .prev {
-                transform: translateY(calc(-1rem - 60%));
-              }
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-              .next {
-                transform: translateY(calc(-1rem - 60%));
-              }
-            }
-          }
-        }
-      }
+    @media (max-width: 720px) {
+      aspect-ratio: 4/3;
     }
   }
 }
 
-@media (max-width: 720px) {
-  .projectsContainer {
-    .projectsBG {
-      .projectsWrapper {
-        .projectContainer {
-          .projectWrapper {
-            .projectDescription {
-              border-radius: 0;
-              border: none;
-            }
+.btnSlide {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid rgba(34, 34, 34, 0.287);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 
-            .projectImage {
-              border-radius: 0;
-              border: none;
-              padding: 0;
-
-              // display: flex;
-              // justify-content: center;
-              // align-content: flex-start;
-
-              // padding-bottom: 48px;
-
-              .slide {
-                top: 0;
-                left: 0;
-                height: 100%;
-                // max-height: 312px;
-                width: 100%;
-                // max-width: 600px;
-
-                border-radius: 0;
-                border: none;
-
-                .imgContainer {
-                  img {
-                    border-radius: 0;
-                  }
-                }
-
-                .activeFullpage {
-                  img {
-                    aspect-ratio: 4/3;
-                  }
-                }
-              }
-
-              .prev {
-                transform: translateY(-50%);
-                // transform: translateY(calc(-15px - 60%))
-              }
-
-              .next {
-                transform: translateY(-50%);
-                // transform: translateY(calc(-15px - 60%))
-              }
-            }
-          }
-        }
-      }
-    }
+  img {
+    width: 25px;
+    height: 25px;
+    pointer-events: none;
   }
 }
 
-// @media (max-width: 614px) {
-//   .projectsContainer {
-//     .projectsBG {
-//       .projectsWrapper {
-//         .projectContainer {
-//           .projectWrapper {
-//             .projectDescription {
-//               border-radius: 0;
-//               border: none;
-//             }
+.prev {
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
 
-//             .projectImage {
-//               border-radius: 0;
-//               border: none;
-//               padding: 0;
+.next {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
 
-//               display: flex;
-//               justify-content: center;
-//               align-content: flex-start;
+.containerDots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  background-color: rgba(97, 96, 96, 0.4);
+  border-radius: 0.5rem;
+  padding: 3px 0;
 
-//               // padding-bottom: 48px;
+  .dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid #f1f1f1;
+    margin: 0 5px;
+    background: #f1f1f1;
+    cursor: pointer;
+  }
 
-//               .slide {
-//                 top: 0;
-//                 left: 0;
-//                 max-height: 100%;
-//                 max-width: 100%;
-//                 height: 100%;
-//                 width: 100%;
+  .active {
+    background: rgb(32, 32, 32);
+  }
 
-//                 border-radius: 0;
-//                 border: none;
+  @media (max-width: 310px) {
+    display: none;
+  }
+}
 
-//                 .imgContainer {
-//                   img {
-//                     border-radius: 0;
-//                   }
-//                 }
-//               }
-
-//               .prev {
-//                 transform: translateY(-50%);
-//               }
-
-//               .next {
-//                 transform: translateY(-50%);
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
+.projectImageToggler {
+  position: static;
+}

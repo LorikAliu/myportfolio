@@ -28,6 +28,19 @@ body {
   overflow: hidden;
 }
 
+.container {
+  width: 100%;
+  max-width: 1920px;
+}
+
+.title {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding: 3rem 0 1.3rem 0;
+}
+
 /* html,
 body {
   padding: 0;

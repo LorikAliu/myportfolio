@@ -129,14 +129,7 @@
 @media (max-width: 1000px) {
 
   .landing {
-    // height: 960px;
-
     .row {
-      // background-image: url("../public/landing-bg-mobile.png");
-      // background-position: center;
-      // background-repeat: no-repeat;
-      // background-size: cover;
-
       flex-direction: column;
       flex-wrap: nowrap;
 
@@ -146,10 +139,8 @@
         order: 2;
         color: rgba(0, 0, 0, 0.8);
         min-height: 0;
-        // flex: 0 1 25%;
-        flex: 1 1 auto;
-        // flex: 0 1 auto;
-        // padding-top: 15px;
+        flex: 0 1 25%;
+        // flex: 1 1 auto;
       }
     
       .img {
@@ -163,8 +154,8 @@
     
       .developer {
         order: 3;
-        // flex: 0 1 25%;
-        flex: 1 1 auto;
+        flex: 0 1 25%;
+        // flex: 1 1 auto;
       }
       .empty {
         order: 4;

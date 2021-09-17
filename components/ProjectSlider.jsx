@@ -1,5 +1,5 @@
 import React, {  useState } from 'react'
-import projectsStyles from '../styles/Projects.module.scss'
+import projectStyles from '../styles/Projects.module.scss'
 import { prefix } from '../utilits/prefix';
 
 const ProjectSlider = ({ projectsData, projectDir }) => {
@@ -33,23 +33,22 @@ const ProjectSlider = ({ projectsData, projectDir }) => {
         const slide = imgContainer.parentNode
         const projectImage = slide.parentNode
 
-        // document.querySelector('body').style.overflow = "hidden";
         document.querySelector('body').classList.toggle('bodyToggler');
 
-        projectImage.classList.toggle(`${projectsStyles.projectImageToggler}`);
-        slide.classList.toggle(`${projectsStyles.slideToggler}`);  
-        imgContainer.classList.toggle(`${projectsStyles.activeFullpage}`);
+        projectImage.classList.toggle(`${projectStyles.projectImageToggler}`);
+        slide.classList.toggle(`${projectStyles.slideToggler}`);  
+        imgContainer.classList.toggle(`${projectStyles.activeFullpage}`);
     }
 
     return (
-        <div className={projectsStyles.projectImage}>
+        <div className={projectStyles['projects-image']}>
         {projectsData.map((obj, index) => {
             return (
                 <div
                 key={obj.id}
-                className={slideIndex === index + 1 ? `${projectsStyles.slide} ${projectsStyles.activeAnim}` : `${projectsStyles.slide}`}
+                className={slideIndex === index + 1 ? `${projectStyles['image-slide']} ${projectStyles['image-slide--active']}` : `${projectStyles['image-slide']}`}
                 >
-                    <div className={projectsStyles.imgContainer} onClick={imgFullScreen}>
+                    <div className={projectStyles['image-slide__background']} onClick={imgFullScreen}>
                         <img 
                         src={`${prefix}/${projectDir}/img${index + 1}.png`} alt={`${obj.title}`}
                         />
@@ -60,23 +59,23 @@ const ProjectSlider = ({ projectsData, projectDir }) => {
 
         <button
         onClick={prevSlide}
-        className={`${projectsStyles.btnSlide} ${projectsStyles.prev}`}
+        className={`${projectStyles.btnSlide} ${projectStyles.prev}`}
         >
         <img src={`${prefix}/svgs/left-arrow.svg`} />
         </button>
 
         <button
         onClick={nextSlide}
-        className={`${projectsStyles.btnSlide} ${projectsStyles.next}`}
+        className={`${projectStyles.btnSlide} ${projectStyles.next}`}
         >
         <img src={`${prefix}/svgs/right-arrow.svg`} />
         </button>
 
-        <div className={projectsStyles.containerDots}>
+        <div className={projectStyles.containerDots}>
             {Array.from({length: projectsData.length}).map((item, index) => (
                 <div key={index}
                 onClick={() => moveDot(index + 1)}
-                className={slideIndex === index + 1 ? `${projectsStyles.dot} ${projectsStyles.active}` : `${projectsStyles.dot}`}
+                className={slideIndex === index + 1 ? `${projectStyles.dot} ${projectStyles.active}` : `${projectStyles.dot}`}
                 ></div>
             ))}
         </div>
