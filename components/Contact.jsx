@@ -1,8 +1,10 @@
-import React from 'react'
 import { useForm } from "react-hook-form";
+import useObserver from '../hooks/useObserver';
 import contactStyles from '../styles/Contact.module.scss'
 
-const Contact = () => {
+const Contact = ({activeSection, setActiveSection, refs, pageHeight = 100}) => {
+
+    useObserver(activeSection, setActiveSection, refs, 'contact', pageHeight)
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -31,8 +33,8 @@ const Contact = () => {
       };
 
     return (
-        <div className={contactStyles.contactContainer}>
-            <div className={contactStyles.formContainer} id="contact">
+        <div ref={refs['contact']} className={contactStyles.contactContainer} id="contact">
+            <div className={contactStyles.formContainer}>
                 <form onSubmit={handleSubmit(onSubmit)} >
                     <div className={contactStyles.formTitle}>
                         <div className={contactStyles.title}><h1>Get In Touch</h1></div>

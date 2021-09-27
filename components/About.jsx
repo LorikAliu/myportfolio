@@ -1,10 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react'
+import useObserver from '../hooks/useObserver';
 import aboutStyles from '../styles/About.module.scss'
 import { prefix } from '../utilits/prefix';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-const About = () => {
+const About = ({activeSection, setActiveSection, refs, pageHeight = 100}) => {
+
+    useObserver(activeSection, setActiveSection, refs, 'about', pageHeight)
+
     gsap.registerPlugin(ScrollTrigger);
     const column1 = useRef(null);
     const column2 = useRef(null);
@@ -38,7 +42,7 @@ const About = () => {
     }, [])
 
     return (
-        <div className={aboutStyles.aboutContainer} id="about">
+        <div ref={refs['about']} className={aboutStyles.aboutContainer} id="about">
             <div className={aboutStyles.aboutWrapper}>
                 <div className={aboutStyles.aboutTitle}>
                     <h1>About Me</h1>

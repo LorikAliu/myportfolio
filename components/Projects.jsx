@@ -1,14 +1,16 @@
-import React from 'react'
+import useObserver from '../hooks/useObserver';
 import ProjectSlider from './ProjectSlider'
 import projectStyles from '../styles/Projects.module.scss'
 import imagesData from '../utilits/imagesData'
 import imagesData2 from '../utilits/imagesData2'
 
 
-const Projects = () => {
+const Projects = ({activeSection, setActiveSection, refs, pageHeight = 100}) => {
+
+    useObserver(activeSection, setActiveSection, refs, 'projects', pageHeight)
 
     return (
-        <div className={`container ${projectStyles['projects--container']}`} id="projects">
+        <div ref={refs['projects']} className={`container ${projectStyles['projects--container']}`} id="projects">
             <div className={`wrapper ${projectStyles['projects--wrapper']}`}>
             {/* <div className={projectsStyles['projects-wrapper__t--e']}> */}
                 <h1 className={`title ${projectStyles['projects--title']}`}>Recent Projects</h1>

@@ -1,53 +1,18 @@
-import React, { useEffect, useState, useRef } from 'react'
+import useObserver from '../hooks/useObserver';
 import landingStyles from '../styles/Landing.module.scss'
 import { prefix } from '../utilits/prefix';
 
-import Nav from '../components/Nav'
+const Landing = ({activeSection, setActiveSection, refs, pageHeight = 100}) => {
 
-function useOnScreen(options) {
-    const ref = useRef()
-    const [visible, setVisible] = useState(false)
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(([entry]) => {
-            // console.log(entry)
-            setVisible(entry.isIntersecting)
-        }, options)
-
-        // console.log(ref.current)
-
-        if(ref.current) {
-            observer.observe(ref.current)
-        }
-
-        return () => {
-            if(ref.current) {
-                observer.unobserve(ref.current)
-            }
-        }
-
-    },[ref, visible])
-
-    return [ref, visible]
-}
-
-const Landing = () => {
-
-    const [ref, visible] = useOnScreen({rootMargin: "-44px 0px 0px 0px"})
+    useObserver(activeSection, setActiveSection, refs, 'landing', pageHeight)
 
     return (
-        <>
-        {visible ? (
-            <Nav navActv={false} />
-        ) : (
-            <Nav navActv={true} />
-        )}
-        <div className={landingStyles.landing} id="landing">
+        <div ref={refs['landing']} className={landingStyles.landing} id="landing">
             <div className={landingStyles.row}>
                 <div className={landingStyles.hello}>
                     <div className={landingStyles.helloName}>Hello<span className={landingStyles.wavingHand}> 👋</span>, my name is Lorik.</div>
                 </div>
-                <div className={landingStyles.img} ref={ref}>
+                <div className={landingStyles.img}>
                     <img src={`${prefix}/computer-img.svg`} alt="computer_image" />
                 </div>
                 <div className={landingStyles.developer}>
@@ -55,12 +20,8 @@ const Landing = () => {
                 </div>
                 <div className={landingStyles.empty}></div>
             </div>
-            <div className={landingStyles.row2}>
-
-            </div>
+            <div className={landingStyles.row2}></div>
         </div>
-        </>
-        
     )
 }
 

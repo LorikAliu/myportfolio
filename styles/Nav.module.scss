@@ -12,6 +12,9 @@
 
     transition: background-color 250ms ease-in;
 
+    background-color: #32a49a;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+
     .logo {
       height: 60px;
       display: flex;
@@ -94,9 +97,12 @@
       width: 100%;
     }
     li {
-      span {
+      color: rgba(0, 0, 0, 0.815);
+      // color: #333333;
+      position: relative;
+      .span {
         text-decoration: none;
-        color: rgba(0, 0, 0, 0.815);
+        // color: rgba(0, 0, 0, 0.815);
         font-family: "Roboto", sans-serif;
         font-size: 20px;
         width: 100%;
@@ -112,6 +118,21 @@
       }
     }
 
+    .navAct {
+      // color: #000;
+      // font-weight: 500;
+      position: absolute;
+      // background: #fff;
+      background: #d9ddde;
+      height: 2px;
+      width: 90%;
+      bottom: 5px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      // transition: .8s;
+    }
+
     nav ul li :hover {
       color: black;
     }
@@ -121,11 +142,13 @@
     }
   }
 
-  .navActive {
-    background-color: #32a49a;
-    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
-  }
+  // .navActive {
+  //   background-color: #32a49a;
+  //   box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+  // }
 }
+
+
 
 @media (max-width: 460px) {
   .header {
@@ -163,6 +186,10 @@
         justify-self: start;
         display: flex;
         flex-direction: column;
+      }
+      
+      .navAct {
+        display: none;
       }
     }
     .navShow {

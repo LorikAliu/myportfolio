@@ -1,13 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+// import Link from 'next/link'
 import navStyles from '../styles/Nav.module.scss'
 import { prefix } from '../utilits/prefix';
 
-const Nav = ({navActv}) => {
-
-    const router = useRouter()
-
+const Nav = ({activeSection, handleCLick}) => {
     const navb = useRef()
     const navbar = useRef()
 
@@ -16,25 +12,25 @@ const Nav = ({navActv}) => {
         navbar.current.classList.toggle(`${navStyles.navShow}`)
     }
 
-    function closeMenu() {
-        navb.current.classList.contains(`${navStyles.show}`) ? navb.current.classList.remove(`${navStyles.show}`) : ''
-        navbar.current.classList.contains(`${navStyles.navShow}`) ? navbar.current.classList.remove(`${navStyles.navShow}`) : ''
-    }
+    // function closeMenu() {
+    //     navb.current.classList.contains(`${navStyles.show}`) ? navb.current.classList.remove(`${navStyles.show}`) : ''
+    //     navbar.current.classList.contains(`${navStyles.navShow}`) ? navbar.current.classList.remove(`${navStyles.navShow}`) : ''
+    // }
 
-    useEffect(()=> {
-        if(navActv) {
-            navbar.current.classList.add(`${navStyles.navActive}`)
-        } else {
-            navbar.current.classList.remove(`${navStyles.navActive}`)
-        }
-      }, [navActv])
+    // useEffect(()=> {
+    //     if(navActv) {
+    //         navbar.current.classList.add(`${navStyles.navActive}`)
+    //     } else {
+    //         navbar.current.classList.remove(`${navStyles.navActive}`)
+    //     }
+    //   }, [navActv])
 
 
     return (
         <header className={navStyles.header}>
             <nav className={navStyles.nav} ref={navbar} id="nav">
                 <div className={navStyles.logo}>
-                    <Link className={navStyles.navBtn} href="#landing"><span onClick={closeMenu}><img src={`${prefix}/logo.svg`} alt="logo" /></span></Link>
+                    <ul><li  className={`${activeSection === 'landing' ? '' : ''}`}><span className={navStyles.span} onClick={() => handleCLick('landing')}><img src={`${prefix}/logo.svg`} alt="logo" /></span></li></ul>
                 </div>
                 <button className={navStyles.navbarToggler} 
                         id="burger"
@@ -43,10 +39,10 @@ const Nav = ({navActv}) => {
                     <span className={navStyles.navbarTogglerIcon}></span>
                 </button>
                 <ul className={navStyles.navbar} ref={navb} id="navbar">
-                    {/* <li><Link className={navStyles.navBtn} onClick={closeMenu} href="#about">about</Link></li> */}
-                    <li><Link className={navStyles.navBtn} href="#about"><span onClick={closeMenu}>about</span></Link></li>
-                    <li><Link className={navStyles.navBtn} href="#projects"><span onClick={closeMenu}>projects</span></Link></li>
-                    <li><Link className={navStyles.navBtn} href="#contact"><span onClick={closeMenu}>contact</span></Link></li>
+                    {/* <li className={`${activeSection === 'about' ? navStyles.navBtn + ' ' + navStyles.navAct : `${navStyles.navBtn}`}`}><span onClick={() => handleCLick('about')}>about</span></li> */}
+                    <li><span className={`${activeSection === 'about' ? navStyles.navAct : ''}`}></span><span className={navStyles.span} onClick={() => handleCLick('about')}>about</span></li>
+                    <li><span className={`${activeSection === 'projects' ? navStyles.navAct : ''}`}></span><span className={navStyles.span} onClick={() => handleCLick('projects')}>projects</span></li>
+                    <li><span className={`${activeSection === 'contact' ? navStyles.navAct : ''}`}></span><span className={navStyles.span} onClick={() => handleCLick('contact')}>contact</span></li>
                 </ul>
             </nav>
         </header>
