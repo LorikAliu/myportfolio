@@ -4,7 +4,7 @@ import { prefix } from '../utilits/prefix';
 
 const Landing = ({activeSection, setActiveSection, refs, pageHeight = 100}) => {
 
-    useObserver(activeSection, setActiveSection, refs, 'landing', pageHeight)
+    useObserver(activeSection, setActiveSection, refs, 'landing', pageHeight-1)
 
     return (
         <div ref={refs['landing']} className={landingStyles.landing} id="landing">

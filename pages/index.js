@@ -35,7 +35,8 @@ export default function Home() {
 
       refs[htmlId].current.scrollIntoView({
           behavior: 'smooth',
-          block: 'center',
+          // block: 'center',
+          block: 'start',
       });
   };
   return (

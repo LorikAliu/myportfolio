@@ -7,7 +7,7 @@ import imagesData2 from '../utilits/imagesData2'
 
 const Projects = ({activeSection, setActiveSection, refs, pageHeight = 100}) => {
 
-    useObserver(activeSection, setActiveSection, refs, 'projects', pageHeight)
+    useObserver(activeSection, setActiveSection, refs, 'projects', pageHeight-1)
 
     return (
         <div ref={refs['projects']} className={`container ${projectStyles['projects--container']}`} id="projects">
