@@ -2,6 +2,16 @@
   height: 100%;
   width: 100%;
   background: #f2f4f9;
+  position: relative;
+
+  .aboutRef {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 10px 0;
+  }
 
   .aboutWrapper {
     // background-image: url("../public/about-bg.svg");

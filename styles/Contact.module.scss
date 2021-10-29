@@ -2,6 +2,16 @@
   height: 100%;
   width: 100%;
   background: #F2F4F9;
+  position: relative;
+
+  .contactRef {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 10px 0;
+  }
 
   .formContainer {
     padding: 20px 0;
