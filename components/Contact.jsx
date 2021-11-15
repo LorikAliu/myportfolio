@@ -33,9 +33,7 @@ const Contact = ({activeSection, setActiveSection, refs, pageHeight = 100}) => {
       };
 
     return (
-        // <div ref={refs['contact']} className={contactStyles.contactContainer} id="contact">
-        <div className={contactStyles.contactContainer}>
-            <div ref={refs['contact']} className={contactStyles.contactRef} id="contact"></div>
+        <div ref={refs['contact']} className={contactStyles.contactContainer} id="contact">
             <div className={contactStyles.formContainer}>
                 <form onSubmit={handleSubmit(onSubmit)} >
                     <div className={contactStyles.formTitle}>

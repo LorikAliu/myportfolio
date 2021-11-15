@@ -10,9 +10,7 @@ const Projects = ({activeSection, setActiveSection, refs, pageHeight = 100}) => 
     useObserver(activeSection, setActiveSection, refs, 'projects', pageHeight-1)
 
     return (
-        // <div ref={refs['projects']} className={`container ${projectStyles['projects--container']}`} id="projects">
-        <div className={`container ${projectStyles['projects--container']}`}>
-            <div ref={refs['projects']} className={projectStyles.projectsRef} id="projects"></div>
+        <div ref={refs['projects']} className={`container ${projectStyles['projects--container']}`} id="projects">
             <div className={`wrapper ${projectStyles['projects--wrapper']}`}>
             {/* <div className={projectsStyles['projects-wrapper__t--e']}> */}
                 <h1 className={`title ${projectStyles['projects--title']}`}>Recent Projects</h1>

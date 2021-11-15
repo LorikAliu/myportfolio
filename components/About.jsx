@@ -42,9 +42,7 @@ const About = ({activeSection, setActiveSection, refs, pageHeight = 100}) => {
     }, [])
 
     return (
-        // <div ref={refs['about']} className={aboutStyles.aboutContainer} id="about">
-        <div className={aboutStyles.aboutContainer}>
-            <div ref={refs['about']} className={aboutStyles.aboutRef} id="about">.</div>
+        <div ref={refs['about']} className={aboutStyles.aboutContainer} id="about">
             <div className={aboutStyles.aboutWrapper}>
                 <div className={aboutStyles.aboutTitle}>
                     <h1>About Me</h1>

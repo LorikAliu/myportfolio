@@ -7,9 +7,7 @@ const Landing = ({activeSection, setActiveSection, refs, pageHeight = 100}) => {
     useObserver(activeSection, setActiveSection, refs, 'landing', pageHeight-1)
 
     return (
-        // <div ref={refs['landing']} className={landingStyles.landing} id="landing">
-        <div className={landingStyles.landing}>
-            <div ref={refs['landing']} className={landingStyles.landingRef} id="landing"></div>
+        <div ref={refs['landing']} className={landingStyles.landing} id="landing">
             <div className={landingStyles.row}>
                 <div className={landingStyles.hello}>
                     <div className={landingStyles.helloName}>Hello<span className={landingStyles.wavingHand}> 👋</span>, my name is Lorik.</div>
